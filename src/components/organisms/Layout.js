@@ -6,7 +6,7 @@ import Header from '../molecules/Header';
 import Footer from '../molecules/Footer';
 import Navigation from '../molecules/Navigation';
 
-import GlobalStyles from '../elements/GlobalStyles';
+import GlobalStyles from '../atoms/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../utils/styling';
 

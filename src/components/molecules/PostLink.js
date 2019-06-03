@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "gatsby";
-import Image from '../elements/Image';
+import Image from '../atoms/Image';
 
 class PostLink extends Component {
     render() {

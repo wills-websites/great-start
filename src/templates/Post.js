@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Image from '../components/elements/Image';
+import Image from '../components/atoms/Image';
 import Layout from '../components/organisms/Layout';
 
 export default function Template( {
