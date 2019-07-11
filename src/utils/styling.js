@@ -10,10 +10,10 @@ export const theme = {
     error: '#d0021b',
   },
   breakpoints: {
-    sm: '(min-width: 576px)',
-    md: '(min-width: 768px)',
-    lg: '(min-width: 992px)',
-    xl: '(min-width: 1200px)',
+    sm: 'min-width: 576px',
+    md: 'min-width: 768px',
+    lg: 'min-width: 992px',
+    xl: 'min-width: 1200px',
   },
   typography: {
     base: 1.6,
