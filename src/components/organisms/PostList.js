@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import PostLink from '../molecules/PostLink';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 
 const List = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
     list-style: none;
     padding-left: 0;
-    width: 100%;
-    @media(${props => props.theme.breakpoints.md}) {
-    grid-template-columns: 1fr 1fr 1fr;
-    }
 `;
 
 class PostList extends Component {
   render() {
     return (
       <div className="PostList">
-        <p>This is the post list.</p>
+        <p>This is a list of posts.</p>
         <StaticQuery
           query={graphql`
             query PostListQuery {
@@ -47,7 +38,9 @@ class PostList extends Component {
             return (
               <List>
                 {data.allMarkdownRemark.edges.map( edge => (
-                <PostLink key={edge.node.id} post={edge.node}/>
+                  <li key={edge.node.id}>
+                    <Link to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
+                  </li>
                 ) )}
               </List>
             )

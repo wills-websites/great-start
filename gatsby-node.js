@@ -31,12 +31,26 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
+    // Create post pages
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: postTemplate,
         context: {}, // additional data can be passed via context
       })
-    })
+    });
+
+    // Create post list pages
+    const posts = result.data.allMarkdownRemark.edges;
+    const postsPerPage = 6;
+    const numPages = Math.ceil( posts.length / postsPerPage );
+    Array.from( { length: numPages } ).forEach( ( _, i ) => {
+      createPage( {
+        path: i === 0 ? `/posts/` : `/posts/${i + 1}`,
+        component: path.resolve( './src/templates/PostListPage.js' ),
+        context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1, },
+      } )
+    } )
+
   })
 };

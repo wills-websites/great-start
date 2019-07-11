@@ -6,7 +6,7 @@ import PostList from '../components/organisms/PostList';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Index</h1>
+    <h1>Home</h1>
     <PostList/>
   </Layout>
 );
