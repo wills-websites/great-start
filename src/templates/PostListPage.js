@@ -55,7 +55,6 @@ export const postListPageQuery = graphql`
                     frontmatter {
                         title
                         date
-                        path
                         thumbnail
                     }
                 }

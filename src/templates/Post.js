@@ -14,7 +14,6 @@ export default function Template( {
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
-          <p>{frontmatter.rating} / 5</p>
           <Image imgName={frontmatter.thumbnail.replace( '/images/uploads/', '' )}/>
           <div
             className="blog-post-content"
@@ -27,15 +26,13 @@ export default function Template( {
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($title: String!) {
+    markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
         thumbnail
-        rating
       }
     }
   }

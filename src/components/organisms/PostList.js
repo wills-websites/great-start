@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
+import { convertToSlug } from '../../utils/helpers';
 
 const List = styled.ul`
     list-style: none;
@@ -27,7 +28,6 @@ class PostList extends Component {
                   frontmatter {
                     title
                     date
-                    path
                     thumbnail
                   }
                 }
@@ -39,7 +39,7 @@ class PostList extends Component {
               <List>
                 {data.allMarkdownRemark.edges.map( edge => (
                   <li key={edge.node.id}>
-                    <Link to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
+                    <Link to={'/post' + convertToSlug(edge.node.frontmatter.title)}>{edge.node.frontmatter.title}</Link>
                   </li>
                 ) )}
               </List>

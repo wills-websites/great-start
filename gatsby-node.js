@@ -20,7 +20,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              path
+              title
             }
           }
         }
@@ -34,9 +34,13 @@ exports.createPages = ({ actions, graphql }) => {
     // Create post pages
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: '/post/' + node.frontmatter.title.toLowerCase()
+        .replace(/[^\w ]+/g,'')
+        .replace(/ +/g,'-'),
         component: postTemplate,
-        context: {}, // additional data can be passed via context
+        context: {
+          title: node.frontmatter.title,
+        }, // additional data can be passed via context
       })
     });
 
