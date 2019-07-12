@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/organisms/Layout";
 import SEO from "../components/molecules/SEO";
 import PostList from '../components/organisms/PostList';
 import Gallery from '../components/organisms/Gallery';
@@ -16,13 +15,13 @@ const images = [
 ];
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1>Home</h1>
     <p>A gallery:</p>
     <Gallery images={images}/>
     <PostList/>
-  </Layout>
+  </>
 );
 
 export default IndexPage;

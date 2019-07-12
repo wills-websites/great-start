@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Header from '../molecules/Header';
-import Footer from '../molecules/Footer';
-import Navigation from '../molecules/Navigation';
+import Header from '../components/molecules/Header';
+import Footer from '../components/molecules/Footer';
+import Navigation from '../components/molecules/Navigation';
+import Transition from '../components/atoms/Transition';
 
-import GlobalStyles from '../atoms/GlobalStyles';
+import GlobalStyles from '../components/atoms/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../utils/styling';
+import { theme } from '../utils/styling';
 
-class Layout extends Component {
+class Index extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -29,7 +30,9 @@ class Layout extends Component {
               <GlobalStyles/>
               <Header siteTitle={data.site.siteMetadata.title}/>
               <Navigation/>
-              <main>{this.props.children}</main>
+              <Transition location={this.props.location}>
+                <main>{this.props.children}</main>
+              </Transition>
               <Footer/>
             </>
           )}
@@ -40,8 +43,8 @@ class Layout extends Component {
 }
 
 
-Layout.propTypes = {
+Index.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default Index;

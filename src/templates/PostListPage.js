@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/organisms/Layout';
 import styled from 'styled-components';
 import SEO from '../components/molecules/SEO';
 import PostLink from '../components/molecules/PostLink';
@@ -24,7 +23,7 @@ class PostListPage extends Component {
   render() {
 
     return (
-      <Layout>
+      <>
         <SEO title="Posts"/>
         <article>
           <h1>Posts</h1>
@@ -35,7 +34,7 @@ class PostListPage extends Component {
           </Holder>
           <Pagination pageContext={this.props.pageContext}/>
         </article>
-      </Layout>
+      </>
     )
   }
 }

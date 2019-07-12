@@ -10,9 +10,6 @@ const Holder = styled.nav`
 `;
 
 class SinglePagination extends Component {
-  componentDidMount() {
-    console.log( this.props.pageContext );
-  }
 
   render() {
     const { prev, next } = this.props.pageContext;

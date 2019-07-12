@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-layout',
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
