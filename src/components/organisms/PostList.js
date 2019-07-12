@@ -12,7 +12,7 @@ class PostList extends Component {
   render() {
     return (
       <div className="PostList">
-        <p>This is a list of posts.</p>
+        <p>A list of posts:</p>
         <StaticQuery
           query={graphql`
             query PostListQuery {
