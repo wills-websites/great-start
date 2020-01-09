@@ -28,10 +28,12 @@ A starter template for Gatbsy and Netlify CMS web builds by Will McLean
 ## Switch from Netlify CMS to Contentful
 1. Create .env.development and .env.production files with CONTENTFUL_ACCESS_TOKEN=<your_access_token_here>. Add files to gitignore.
 1. `npm install --save gatsby-source-contentful` and configure the plugin as shown [here](https://www.gatsbyjs.org/packages/gatsby-source-contentful/)
-1. Update your blog and listing pages specified in gatsby-node.js to use allContentfulProject query
-1. Update your templates (PostLink PostList, Pagination, SinglePagination, Post etc.) to get correct content. 
+1. Update your blog and listing pages specified in gatsby-node.js to use allContentfulYourContentType query
+1. `npm install --save @contentful/rich-text-react-renderer`
+1. Update your templates (PostLink PostList, Pagination, SinglePagination, Post etc.) to get correct content.
 1. Remove netlify cms files (static/admin, posts/, images/uploads/ etc.)
 1. Uninstall and remove form plugin config file the gatsby-plugin-netlify-cms plugin and the previous gatsby-source-filesystem posts configuration
+
 ## Deployment
 Master branch set to auto deploy to <insert url here>
 
