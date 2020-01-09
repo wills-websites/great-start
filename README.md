@@ -8,7 +8,7 @@ A starter template for Gatbsy and Netlify CMS web builds by Will McLean
 - Will's prototype styles
 
 ## Start a site
-1. Copy folder into your new site directory
+1. Download Zip of the repo and copy contents to your new site directory
 1. `npm install`
 1. `git init`
 1. Push to github repo
