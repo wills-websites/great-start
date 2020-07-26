@@ -10,12 +10,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-layout',
     {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        enableIdentityWidget: true,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
