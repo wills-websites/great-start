@@ -1,7 +1,8 @@
-import React from "react";
-import SEO from "../components/molecules/SEO";
+import React from 'react';
+import SEO from '../components/molecules/SEO';
 import PostList from '../components/organisms/PostList';
 import Gallery from '../components/organisms/Gallery';
+import Container from '../components/atoms/Container';
 
 const images = [
   '/images/uploads/tea-gardens-hotel.jpg',
@@ -16,11 +17,13 @@ const images = [
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Home</h1>
-    <p>A gallery:</p>
-    <Gallery images={images}/>
-    <PostList/>
+    <SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]}/>
+    <Container>
+      <h1>Home</h1>
+      <p>A gallery:</p>
+      <Gallery images={images}/>
+      <PostList/>
+    </Container>
   </>
 );
 

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SEO from '../components/molecules/SEO';
 import PostLink from '../components/molecules/PostLink';
 import Pagination from '../components/organisms/Pagination';
+import Container from '../components/atoms/Container';
 
 const Holder = styled.ul`
     display: grid;
@@ -26,13 +27,15 @@ class PostListPage extends Component {
       <>
         <SEO title="Posts"/>
         <article>
-          <h1>Posts</h1>
-          <Holder>
-            {this.props.data.allMarkdownRemark.edges.map( edge => (
-              <PostLink key={edge.node.id} post={edge.node}/>
-            ) )}
-          </Holder>
-          <Pagination pageContext={this.props.pageContext}/>
+          <Container>
+            <h1>Posts</h1>
+            <Holder>
+              {this.props.data.allMarkdownRemark.edges.map( edge => (
+                <PostLink key={edge.node.id} post={edge.node}/>
+              ) )}
+            </Holder>
+            <Pagination pageContext={this.props.pageContext}/>
+          </Container>
         </article>
       </>
     )
