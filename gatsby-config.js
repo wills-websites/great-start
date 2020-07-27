@@ -3,12 +3,14 @@ module.exports = {
     title: `Great Start`,
     description: `Will's great start for Gatsby builds`,
     author: `Will McLean`,
+    siteUrl: `https://www.example.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-layout',
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
