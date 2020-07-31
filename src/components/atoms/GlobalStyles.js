@@ -75,6 +75,12 @@ const GlobalStyle = createGlobalStyle`
       list-style-type: decimal;
   }
   
+  video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
   em, i { font-style: italic; }
   
   strong, b { font-weight: bold; }

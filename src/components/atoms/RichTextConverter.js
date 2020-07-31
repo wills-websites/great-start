@@ -25,7 +25,16 @@ class RichTextConverter extends Component {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
           // console.log(node.data);
           let { title, file } = node.data.target.fields;
-          return <img src={file.url + '?w=800'} alt={title}/>
+          let titleString = title['en-AU'] || title;
+          let url = file.url || file['en-AU'].url;
+          let type = file.contentType || file['en-AU'].contentType;
+          if(type.includes('video')) {
+            return <video controls>
+              <source src={url} type={type}/>
+            </video>
+          } else {
+            return <img src={url + '?w=800'} alt={titleString}/>
+          }
         }
       },
       renderText: text => {
