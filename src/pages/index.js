@@ -3,6 +3,7 @@ import SEO from '../components/molecules/SEO';
 import PostList from '../components/organisms/PostList';
 import Gallery from '../components/organisms/Gallery';
 import Container from '../components/atoms/Container';
+import AnimatedThing from '../components/molecules/AnimatedThing';
 
 const images = [
   '/images/uploads/tea-gardens-hotel.jpg',
@@ -20,8 +21,10 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]}/>
     <Container>
       <h1>Home</h1>
-      <p>A gallery:</p>
+      <h2>A gallery</h2>
       <Gallery images={images}/>
+      <h2>An animation component example</h2>
+      <AnimatedThing/>
       <PostList/>
     </Container>
   </>

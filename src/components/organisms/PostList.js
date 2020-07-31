@@ -11,8 +11,8 @@ const List = styled.ul`
 class PostList extends Component {
   render() {
     return (
-      <div className="PostList">
-        <p>A list of posts:</p>
+      <div>
+        <h2>A list of posts:</h2>
         <StaticQuery
           query={graphql`
             query PostListQuery {

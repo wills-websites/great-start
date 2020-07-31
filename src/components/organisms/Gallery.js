@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const Holder = styled.section`
   width: 100%;
+  max-width: 40rem;
   position: relative;
   cursor: pointer;
 `;
