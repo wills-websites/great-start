@@ -79,8 +79,8 @@ class Gallery extends Component {
       return (
         <Holder>
           <Buttons>
-            <button className="prev" type="button" onClick={this.movePrev}/>
-            <button className="next" type="button" onClick={this.moveNext}/>
+            <button aria-label="Previous" className="prev" type="button" onClick={this.movePrev}/>
+            <button aria-label="Next" className="next" type="button" onClick={this.moveNext}/>
           </Buttons>
           {this.props.images.map( ( image, i ) => {
             let classes = classNames( { 'active': this.state.activeIndex === i } );
