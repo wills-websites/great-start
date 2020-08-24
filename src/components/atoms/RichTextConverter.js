@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styled from 'styled-components';
+import EmbedContainer from './EmbedContainer';
+import MarkdownConverter from './MarkdownConverter';
 
 const Holder = styled.div`
   width: 100%;
@@ -34,6 +36,16 @@ class RichTextConverter extends Component {
             </video>
           } else {
             return <img src={url + '?w=800'} alt={titleString}/>
+          }
+        },
+        [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+          const { embedCode } = node.data.target.fields;
+          console.log( node.data.target );
+          if( node.data.target.sys.contentType.sys.id === 'videoEmbed' ) {
+            let embedCodeString = embedCode['en-AU'] || embedCode;
+            return <EmbedContainer><MarkdownConverter content={embedCodeString}/></EmbedContainer>
+          } else {
+            return null;
           }
         }
       },
