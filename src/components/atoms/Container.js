@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 const Holder = styled.div`
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 0 auto 4rem auto;
   padding: 0 2rem;
+  > :first-child { margin-top: 0; }
+  > :last-child { margin-bottom: 0; }
 `;
 
 class Container extends Component {

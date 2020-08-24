@@ -10,13 +10,11 @@ class Post extends Component {
     const { frontmatter, html } = markdownRemark;
     return (
       <Container>
-        <div>
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <Image imgName={frontmatter.thumbnail.replace( '/images/uploads/', '' )}/>
-          <div dangerouslySetInnerHTML={{ __html: html }}/>
-          <SinglePagination pageContext={this.props.pageContext}/>
-        </div>
+        <h1>{frontmatter.title}</h1>
+        <h2>{frontmatter.date}</h2>
+        <Image imgName={frontmatter.thumbnail.replace( '/images/uploads/', '' )}/>
+        <div dangerouslySetInnerHTML={{ __html: html }}/>
+        <SinglePagination pageContext={this.props.pageContext}/>
       </Container>
     )
   }
