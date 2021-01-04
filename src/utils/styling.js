@@ -9,31 +9,31 @@ export const theme = {
     focus: '#4fcd90',
     error: '#d0021b',
   },
+  typography: {
+    min: 16,
+    max: 24,
+    minScreen: 400,
+    maxScreen: 1200,
+    scale: {
+      min: 1.067,
+      max: 1.125,
+    }
+  },
+  fluidType: ( exp ) => {
+    return `
+      font-size: ${theme.typography.min * Math.pow( theme.typography.scale.min, exp )}px;
+      @media screen and (min-width: ${theme.typography.minScreen}px ) {
+        font-size: calc( ${theme.typography.min * Math.pow( theme.typography.scale.min, exp )}px + (${theme.typography.max * Math.pow( theme.typography.scale.max, exp )} - ${theme.typography.min * Math.pow( theme.typography.scale.min, exp )})*(100vw - ${theme.typography.minScreen}px)/(${theme.typography.maxScreen} - ${theme.typography.minScreen}) );
+      }
+      @media screen and (min-width: ${theme.typography.maxScreen}px ) {
+        font-size: ${theme.typography.max * Math.pow( theme.typography.scale.max, exp )}px;
+      }
+      `
+  },
   breakpoints: {
     sm: 'min-width: 576px',
     md: 'min-width: 768px',
     lg: 'min-width: 992px',
-    xl: 'min-width: 1200px',
-  },
-  typography: {
-    base: 1.6,
-    scale: {
-      xs: 1.067,
-      sm: 1.067,
-      md: 1.125,
-      lg: 1.125,
-    }
-  },
-  typeStyles: ( exp ) => {
-    return `font-size: ${theme.typography.base * Math.pow( theme.typography.scale.xs, exp )}rem;
-    @media ( ${theme.breakpoints.sm} ) {
-      font-size: ${theme.typography.base * Math.pow( theme.typography.scale.sm, exp )}rem;
-    }
-    @media ( ${theme.breakpoints.md} ) {
-      font-size: ${theme.typography.base * Math.pow( theme.typography.scale.md, exp )}rem;
-    }
-    @media ( ${theme.breakpoints.lg} ) {
-      font-size: ${theme.typography.base * Math.pow( theme.typography.scale.lg, exp )}rem;
-    }`
+    xl: `min-width: 1200px`,
   },
 };

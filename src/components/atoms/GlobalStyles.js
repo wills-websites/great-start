@@ -5,21 +5,13 @@ const GlobalStyle = createGlobalStyle`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       // Set rems
-      font-size: 56.25%; // 1rem = 9px
-      @media ( ${props => props.theme.breakpoints.sm} ) {
-          font-size: 56.25%; // 1rem = 9px
-      }
-      @media ( ${props => props.theme.breakpoints.md} ) {
-          font-size: 62.5%; // 1rem = 10px
-      }
-      @media ( ${props => props.theme.breakpoints.lg} ) {
-          font-size: 62.5%; // 1rem = 10px
-      }
+      // https://www.smashingmagazine.com/2016/05/fluid-typography/
+      font-size: ${props => props.theme.fluidType(0)};
       * { box-sizing: border-box; }
   }
 
   body {
-      margin: 2rem;
+      margin: 0;
       // Use system fonts: https://css-tricks.com/snippets/css/system-font-stack/
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       color: ${props => props.theme.colours.black};
@@ -27,60 +19,60 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6,
-  .h1, .h2, .h3, .h4, .h5, .h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+      line-height: 1.1;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+  
   p,
   ol, ul, li,
   code, kbd, pre, samp {
       line-height: 1.5;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
   }
 
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-      font-weight: normal;
+      font-weight: bold;
       a { text-decoration: none; }
       a:hover { text-decoration: none; }
   }
 
-  h1, .h1 { ${props => props.theme.typeStyles( 5 )}; }
-  h2, .h2 { ${props => props.theme.typeStyles( 4 )}; }
-  h3, .h3 { ${props => props.theme.typeStyles( 3 )}; }
-  h4, .h4 { ${props => props.theme.typeStyles( 2 )}; }
-  h5, .h5 { ${props => props.theme.typeStyles( 1 )}; }
-  h6, .h6 { ${props => props.theme.typeStyles( 0 )}; }
-  p, ul, ol, blockquote { ${props => props.theme.typeStyles( 0 )}; }
+  h1, .h1 { ${props => props.theme.fluidType(4)}; }
+  h2, .h2 { ${props => props.theme.fluidType(3)}; }
+  h3, .h3 { ${props => props.theme.fluidType(2)}; }
+  h4, .h4 { ${props => props.theme.fluidType(1)}; }
+  h5, .h5 { ${props => props.theme.fluidType(0)}; }
+  h6, .h6 { ${props => props.theme.fluidType(-1)}; }
 
   li {
-      ${props => props.theme.typeStyles( 0 )};
       margin-top: 0;
       margin-bottom: 0;
   }
 
-  small {  ${props => props.theme.typeStyles( -1 )} }
+  small, p.small { ${props => props.theme.fluidType(-1)}; }
   
   code, kbd, pre, samp {
       font-family: monospace;
-      font-size: 16px;
       white-space: normal;
   }
   
-  pre { font-size: 16px; }
-  
   ul {
-      padding-left: 4rem;
+      padding-left: 1rem;
       list-style-type: disc;
   }
   
   ol {
-      padding-left: 4rem;
+      padding-left: 1rem;
       list-style-type: decimal;
   }
   
   video {
     width: 100%;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   
   em, i { font-style: italic; }
@@ -89,7 +81,7 @@ const GlobalStyle = createGlobalStyle`
   
   blockquote {
       font-weight: bold;
-      padding-left: 4rem;
+      padding-left: 1rem;
   }
   
   a { color: ${props => props.theme.colours.link}; }
@@ -110,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
   sub { top: 0.4em; }
   
   label {
-      ${props => props.theme.typeStyles( -1 )};
+      ${props => props.theme.fluidType( -1 )};
       line-height: 1.2;
       font-weight: normal;
   }
@@ -132,10 +124,10 @@ const GlobalStyle = createGlobalStyle`
   textarea {
       display: block;
       font-family:inherit;
-      ${props => props.theme.typeStyles( 0 )};
-      padding: 0.4rem 1rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      ${props => props.theme.fluidType( 0 )};
+      padding: 0.2rem 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
       border: 1px ${props => props.theme.colours.black} solid;
       border-radius: 2px;
       line-height: 1.6;
@@ -163,10 +155,10 @@ const GlobalStyle = createGlobalStyle`
   input[type="reset"] {
       display: inline-block;
   
-      padding: 0 2rem;
+      padding: 0 1rem;
   
       font-family:inherit;
-      ${props => props.theme.typeStyles( 0 )};
+      ${props => props.theme.fluidType( 0 )};
       line-height: 2;
       text-decoration: none;
       white-space: nowrap;
