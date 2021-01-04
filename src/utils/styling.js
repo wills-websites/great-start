@@ -19,6 +19,7 @@ export const theme = {
       max: 1.125,
     }
   },
+  // https://www.smashingmagazine.com/2016/05/fluid-typography/
   fluidType: ( exp ) => {
     return `
       font-size: ${theme.typography.min * Math.pow( theme.typography.scale.min, exp )}px;

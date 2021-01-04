@@ -4,8 +4,6 @@ const GlobalStyle = createGlobalStyle`
   html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      // Set rems
-      // https://www.smashingmagazine.com/2016/05/fluid-typography/
       font-size: ${props => props.theme.fluidType(0)};
       * { box-sizing: border-box; }
   }
