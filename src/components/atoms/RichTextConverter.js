@@ -24,13 +24,13 @@ class RichTextConverter extends Component {
 
     const options = {
       renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        [ BLOCKS.EMBEDDED_ASSET ]: ( node ) => {
           // console.log(node.data);
           let { title, file } = node.data.target.fields;
-          let titleString = title['en-AU'] || title;
-          let url = file.url || file['en-AU'].url;
-          let type = file.contentType || file['en-AU'].contentType;
-          if(type.includes('video')) {
+          let titleString = title[ 'en-AU' ] || title;
+          let url = file.url || file[ 'en-AU' ].url;
+          let type = file.contentType || file[ 'en-AU' ].contentType;
+          if ( type.includes( 'video' ) ) {
             return <video controls>
               <source src={url} type={type}/>
             </video>
@@ -38,26 +38,28 @@ class RichTextConverter extends Component {
             return <img src={url + '?w=800'} alt={titleString}/>
           }
         },
-        [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        [ BLOCKS.EMBEDDED_ENTRY ]: ( node ) => {
           const { embedCode } = node.data.target.fields;
           console.log( node.data.target );
-          if( node.data.target.sys.contentType.sys.id === 'videoEmbed' ) {
-            let embedCodeString = embedCode['en-AU'] || embedCode;
+          if ( node.data.target.sys.contentType.sys.id === 'videoEmbed' ) {
+            let embedCodeString = embedCode[ 'en-AU' ] || embedCode;
             return <EmbedContainer><MarkdownConverter content={embedCodeString}/></EmbedContainer>
           } else {
             return null;
           }
-        }
+        },
+        [ INLINES.HYPERLINK ]: ( node, children ) =>
+          <a href={node.data.uri} target="_blank" rel="noopener noreferrer">{children}</a>,
       },
       renderText: text => {
-        return text.split('\n').reduce((children, textSegment, index) => {
-          return [...children, index > 0 && <br key={index} />, textSegment];
-        }, []);
+        return text.split( '\n' ).reduce( ( children, textSegment, index ) => {
+          return [ ...children, index > 0 && <br key={index}/>, textSegment ];
+        }, [] );
       },
     };
 
     return (
-      <Holder>{documentToReactComponents(content, options)}</Holder>
+      <Holder>{documentToReactComponents( content, options )}</Holder>
     )
   }
 }
