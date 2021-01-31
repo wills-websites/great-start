@@ -4,6 +4,7 @@ import PostList from '../components/organisms/PostList';
 import Gallery from '../components/organisms/Gallery';
 import Container from '../components/atoms/Container';
 import AnimatedThing from '../components/molecules/AnimatedThing';
+import GsapExample from '../components/organisms/GsapExample';
 
 const images = [
   '/images/uploads/tea-gardens-hotel.jpg',
@@ -26,6 +27,8 @@ const IndexPage = () => (
       <h2>An animation component example</h2>
       <AnimatedThing/>
       <PostList/>
+      <h2>An animate on scroll example</h2>
+      <GsapExample/>
     </Container>
   </>
 );
