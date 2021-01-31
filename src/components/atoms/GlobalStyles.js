@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-size: ${props => props.theme.fluidType(0)};
+      font-size: ${props => props.theme.fluidType( 0 )};
       * { box-sizing: border-box; }
   }
 
@@ -38,19 +38,19 @@ const GlobalStyle = createGlobalStyle`
       a:hover { text-decoration: none; }
   }
 
-  h1, .h1 { ${props => props.theme.fluidType(4)}; }
-  h2, .h2 { ${props => props.theme.fluidType(3)}; }
-  h3, .h3 { ${props => props.theme.fluidType(2)}; }
-  h4, .h4 { ${props => props.theme.fluidType(1)}; }
-  h5, .h5 { ${props => props.theme.fluidType(0)}; }
-  h6, .h6 { ${props => props.theme.fluidType(-1)}; }
+  h1, .h1 { ${props => props.theme.fluidType( 4 )}; }
+  h2, .h2 { ${props => props.theme.fluidType( 3 )}; }
+  h3, .h3 { ${props => props.theme.fluidType( 2 )}; }
+  h4, .h4 { ${props => props.theme.fluidType( 1 )}; }
+  h5, .h5 { ${props => props.theme.fluidType( 0 )}; }
+  h6, .h6 { ${props => props.theme.fluidType( -1 )}; }
 
   li {
       margin-top: 0;
       margin-bottom: 0;
   }
 
-  small, p.small { ${props => props.theme.fluidType(-1)}; }
+  small, p.small { ${props => props.theme.fluidType( -1 )}; }
   
   code, kbd, pre, samp {
       font-family: monospace;
@@ -82,14 +82,7 @@ const GlobalStyle = createGlobalStyle`
       padding-left: 1rem;
   }
   
-  a { color: ${props => props.theme.colours.link}; }
-  a:visited { color: ${props => props.theme.colours.visited}; }
-  a:hover { color: ${props => props.theme.colours.link}; }
-  a:active,
-  a:focus {
-      color: ${props => props.theme.colours.focus};
-      outline: 1px dotted ${props => props.theme.colours.focus};
-  }
+  a { color: inherit; }
   
   sup, sub {
       vertical-align: baseline;
@@ -126,7 +119,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0.2rem 0.5rem;
       margin-top: 1rem;
       margin-bottom: 1rem;
-      border: 1px ${props => props.theme.colours.black} solid;
+      border: 1px solid;
       border-radius: 2px;
       line-height: 1.6;
       background-color: transparent;
@@ -163,23 +156,26 @@ const GlobalStyle = createGlobalStyle`
       border: 1px solid;
       border-radius: 2px;
   
-      color: ${props => props.theme.colours.link};
+      color: inherit;
       background-color: transparent;
-  
-      &:focus {
-          color: ${props => props.theme.colours.focus};
-          outline: 1px dotted ${props => props.theme.colours.focus};
-      }
+      
       &:hover {
           text-decoration: none;
       }
-      &:visited {
-          text-decoration: none;
-          color: ${props => props.theme.colours.visited};
+      &.link {
+        border: none;
+        padding: 0;
+        background-color: transparent;
       }
-      &:active {
-          text-decoration: none;
-          color: inherit;
+      &.icon {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        svg {
+          height: 3rem;
+          width: auto;
+          display: block;
+        }
       }
   }
   

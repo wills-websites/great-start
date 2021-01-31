@@ -2,9 +2,6 @@ export const theme = {
   colours: {
     black: '#373737',
     white: 'white',
-    // Links
-    link: '#0000ee',
-    visited: '#551a8b',
     // Accessibility and forms
     focus: '#4fcd90',
     error: '#d0021b',
