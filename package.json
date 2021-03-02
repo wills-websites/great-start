@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "co-develop",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A Gatsby site for Co.Develop",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Will McLean <willmcl@gmail.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@svgr/webpack": "^5.5.0",
@@ -37,7 +37,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "2.2.1"
   },
   "keywords": [
     "gatsby"

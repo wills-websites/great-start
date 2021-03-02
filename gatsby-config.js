@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Great Start`,
-    description: `Will's great start for Gatsby builds`,
+    title: `Co.Develop`,
+    description: `A Gatsby site for Co.Develop`,
     author: `Will McLean`,
     siteUrl: `https://www.example.com`,
   },

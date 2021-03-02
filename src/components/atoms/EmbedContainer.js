@@ -1,28 +1,26 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
 const Holder = styled.div`
-  position: relative; 
-  padding-bottom: 56.25%; 
-  height: 0; 
-  overflow: hidden; 
-  max-width: 100%; 
-  
-  iframe, 
-  object, 
-  embed { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-  }
-`;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
 
-function EmbedContainer({children}) {
-    return (
-      <Holder>{children}</Holder>
-    )
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+`
+
+function EmbedContainer({ children }) {
+  return <Holder>{children}</Holder>
 }
 
-export default EmbedContainer;
+export default EmbedContainer

@@ -1,10 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-size: ${props => props.theme.fluidType( 0 )};
+      font-size: ${(props) => props.theme.fluidType(0)};
       * { box-sizing: border-box; }
   }
 
@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       // Use system fonts: https://css-tricks.com/snippets/css/system-font-stack/
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      color: ${props => props.theme.colours.black};
-      background-color: ${props => props.theme.colours.white};
+      color: ${(props) => props.theme.colours.black};
+      background-color: ${(props) => props.theme.colours.white};
   }
 
   h1, h2, h3, h4, h5, h6,
@@ -38,19 +38,19 @@ const GlobalStyle = createGlobalStyle`
       a:hover { text-decoration: none; }
   }
 
-  h1, .h1 { ${props => props.theme.fluidType( 4 )}; }
-  h2, .h2 { ${props => props.theme.fluidType( 3 )}; }
-  h3, .h3 { ${props => props.theme.fluidType( 2 )}; }
-  h4, .h4 { ${props => props.theme.fluidType( 1 )}; }
-  h5, .h5 { ${props => props.theme.fluidType( 0 )}; }
-  h6, .h6 { ${props => props.theme.fluidType( -1 )}; }
+  h1, .h1 { ${(props) => props.theme.fluidType(4)}; }
+  h2, .h2 { ${(props) => props.theme.fluidType(3)}; }
+  h3, .h3 { ${(props) => props.theme.fluidType(2)}; }
+  h4, .h4 { ${(props) => props.theme.fluidType(1)}; }
+  h5, .h5 { ${(props) => props.theme.fluidType(0)}; }
+  h6, .h6 { ${(props) => props.theme.fluidType(-1)}; }
 
   li {
       margin-top: 0;
       margin-bottom: 0;
   }
 
-  small, p.small { ${props => props.theme.fluidType( -1 )}; }
+  small, p.small { ${(props) => props.theme.fluidType(-1)}; }
   
   code, kbd, pre, samp {
       font-family: monospace;
@@ -93,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
   sub { top: 0.4em; }
   
   label {
-      ${props => props.theme.fluidType( -1 )};
+      ${(props) => props.theme.fluidType(-1)};
       line-height: 1.2;
       font-weight: normal;
   }
@@ -115,7 +115,7 @@ const GlobalStyle = createGlobalStyle`
   textarea {
       display: block;
       font-family:inherit;
-      ${props => props.theme.fluidType( 0 )};
+      ${(props) => props.theme.fluidType(0)};
       padding: 0.2rem 0.5rem;
       margin-top: 1rem;
       margin-bottom: 1rem;
@@ -125,7 +125,7 @@ const GlobalStyle = createGlobalStyle`
       background-color: transparent;
       -webkit-appearance: none;
       &:focus {
-          border: 1px ${props => props.theme.colours.focus} solid;
+          border: 1px ${(props) => props.theme.colours.focus} solid;
       }
   }
   
@@ -149,7 +149,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0 1rem;
   
       font-family:inherit;
-      ${props => props.theme.fluidType( 0 )};
+      ${(props) => props.theme.fluidType(0)};
       line-height: 2;
       text-decoration: none;
       white-space: nowrap;
@@ -180,8 +180,8 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .errorMsg {
-      color: ${props => props.theme.colours.error};
+      color: ${(props) => props.theme.colours.error};
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
