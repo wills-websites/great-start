@@ -5,11 +5,14 @@ module.exports = {
     author: `Will McLean`,
     siteUrl: `https://www.example.com`,
   },
+  flags: {
+    DEV_SSR: false,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
-    'gatsby-plugin-layout',
+    "gatsby-plugin-layout",
     `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-svgr-svgo",
@@ -27,12 +30,12 @@ module.exports = {
                   collapseGroups: false,
                   mergePaths: false,
                   prefixIds: true,
-                }
-              ]
-            }
-          }
+                },
+              ],
+            },
+          },
         ],
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -66,4 +69,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-};
+}
