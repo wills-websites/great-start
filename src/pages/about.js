@@ -1,10 +1,10 @@
-import React from 'react';
-import SEO from '../components/molecules/SEO'
-import Container from '../components/atoms/Container';
+import React from "react"
+import SEO from "../components/molecules/SEO"
+import Container from "../components/atoms/Container"
 
 const SecondPage = () => (
   <>
-    <SEO title="About"/>
+    <SEO title="About" />
     <Container>
       <h1>About</h1>
       <h1>Heading 1</h1>
@@ -16,6 +16,6 @@ const SecondPage = () => (
       <p>Paragraph text. This site has an about page.</p>
     </Container>
   </>
-);
+)
 
-export default SecondPage;
+export default SecondPage

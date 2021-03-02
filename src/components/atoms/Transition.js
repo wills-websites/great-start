@@ -1,16 +1,13 @@
 import React from "react"
-import {
-  TransitionGroup,
-  CSSTransition
-} from "react-transition-group";
-import styled from 'styled-components';
+import { TransitionGroup, CSSTransition } from "react-transition-group"
+import styled from "styled-components"
 
 //This variable will be responsible for our animation duration
-const timeout = 500;
+const timeout = 500
 
 const TransitionHolder = styled.div`
   position: relative;
-`;
+`
 
 const PageHolder = styled.div`
   width: 100%;
@@ -21,8 +18,10 @@ const PageHolder = styled.div`
     left: 0;
     opacity: 0;
   }
-  &.page-appear-active, &.page-appear-done,
-  &.page-enter-active, &.page-enter-done {
+  &.page-appear-active,
+  &.page-appear-done,
+  &.page-enter-active,
+  &.page-enter-done {
     opacity: 1;
     transition: opacity ${timeout}ms;
   }
@@ -33,12 +32,12 @@ const PageHolder = styled.div`
     opacity: 0;
     transition: opacity ${timeout}ms;
   }
-`;
+`
 
 class Transition extends React.PureComponent {
   render() {
     //Destructuring props to avoid garbage this.props... in return statement
-    const { children, location } = this.props;
+    const { children, location } = this.props
 
     return (
       //Using TransitionGroup and CSSTransition which are both
