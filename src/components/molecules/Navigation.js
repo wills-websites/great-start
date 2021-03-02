@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'gatsby';
-import Container from '../atoms/Container';
+import React, { Component } from "react"
+import { Link } from "gatsby"
+import Container from "../atoms/Container"
 
 class Navigation extends Component {
   render() {
@@ -8,9 +8,18 @@ class Navigation extends Component {
       <Container>
         <nav className="Navigation">
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about/">About</Link></li>
-            <li><Link to="/posts/">Posts</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+            <li>
+              <Link to="/posts/">Posts</Link>
+            </li>
+            <li>
+              <Link to="/form/">Contact Form</Link>
+            </li>
           </ul>
         </nav>
       </Container>
@@ -18,4 +27,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default Navigation
