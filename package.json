@@ -9,6 +9,7 @@
     "@svgr/webpack": "^5.5.0",
     "babel-plugin-styled-components": "^1.12.0",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.3",
     "formik": "^2.2.6",
     "gatsby": "^3.0.0",
     "gatsby-image": "^3.0.0",
@@ -44,7 +45,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
