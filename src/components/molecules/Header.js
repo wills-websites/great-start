@@ -1,7 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React, { Component } from "react"
-import Container from "../atoms/Container"
+import { Link } from "gatsby";
+import React, { Component } from "react";
+import Container from "../atoms/Container";
 
 class Header extends Component {
   render() {
@@ -9,20 +8,12 @@ class Header extends Component {
       <Container>
         <header className="Header">
           <h1>
-            <Link to="/">{this.props.siteTitle}</Link>
+            <Link to="/">Great Start</Link>
           </h1>
         </header>
       </Container>
-    )
+    );
   }
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: "",
-}
-
-export default Header
+export default Header;
