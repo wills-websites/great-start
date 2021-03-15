@@ -1,6 +1,5 @@
 {
-  "endOfLine": "lf",
-  "semi": false,
+  "endOfLine": "crlf",
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "es5"

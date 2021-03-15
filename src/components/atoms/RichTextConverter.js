@@ -1,6 +1,6 @@
 import React from 'react';
-import { INLINES } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { INLINES } from "@contentful/rich-text-types";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 import styled from 'styled-components';
 
 const Holder = styled.div.attrs({
