@@ -27,7 +27,7 @@ class Image extends Component {
                 gatsbyImageData(
                     width: 1200
                     placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
+                    formats: [AUTO, WEBP]
                 )
               }
             }
