@@ -34,6 +34,7 @@
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.1",
     "showdown": "^1.9.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.1",
     "yup": "^0.32.9"
   },
