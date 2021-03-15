@@ -21,7 +21,7 @@ const IndexPage = () => (
   <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Container>
-      <h1>Home</h1>
+      <h1>Home (We are using Gatsby V3)</h1>
       <h2>A gallery</h2>
       <Gallery images={images} />
       <h2>An animation component example</h2>

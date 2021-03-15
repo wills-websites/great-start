@@ -9,34 +9,35 @@ module.exports = {
     DEV_SSR: false,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-layout",
     `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-svgr-svgo",
-      options: {
-        inlineSvgOptions: [
-          {
-            test: /\.inline.svg$/,
-            svgoConfig: {
-              plugins: [
-                {
-                  removeViewBox: false,
-                  cleanupIDs: false,
-                  removeDimensions: true,
-                  removeOffCanvasPaths: true,
-                  collapseGroups: false,
-                  mergePaths: false,
-                  prefixIds: true,
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-svgr-svgo",
+    //   options: {
+    //     inlineSvgOptions: [
+    //       {
+    //         test: /\.inline.svg$/,
+    //         svgoConfig: {
+    //           plugins: [
+    //             {
+    //               removeViewBox: false,
+    //               cleanupIDs: false,
+    //               removeDimensions: true,
+    //               removeOffCanvasPaths: true,
+    //               collapseGroups: false,
+    //               mergePaths: false,
+    //               prefixIds: true,
+    //             },
+    //           ],
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

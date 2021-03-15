@@ -67,3 +67,16 @@ exports.createPages = ({ actions, graphql }) => {
     })
   })
 }
+
+// Example graphQL schema
+// https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/
+
+// exports.sourceNodes = ({ actions }) => {
+//   const { createTypes } = actions;
+//   const typeDefs = `
+//     type ContentfulNews implements Node {
+//       images: [ContentfulAsset]
+//     }
+//   `;
+//   createTypes(typeDefs)
+// };

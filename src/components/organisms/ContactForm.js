@@ -58,10 +58,10 @@ function ContactForm() {
             data-netlify-honeypot="bot-field"
           >
             <div className="fieldset">
-              <Field className="input" type="text" name="name" />
               <label htmlFor="name" className="label">
                 Name
               </label>
+              <Field className="input" type="text" name="name" />
               <ErrorMessage
                 className="errorMsg"
                 name="name"
@@ -69,10 +69,10 @@ function ContactForm() {
               />
             </div>
             <div className="fieldset">
-              <Field className="input" type="text" name="email" />
               <label htmlFor="email" className="label">
                 Email
               </label>
+              <Field className="input" type="text" name="email" />
               <ErrorMessage
                 className="errorMsg"
                 name="email"
@@ -80,10 +80,10 @@ function ContactForm() {
               />
             </div>
             <div className="fieldset">
-              <Field className="input" type="text" name="subject" />
               <label htmlFor="subject" className="label">
                 Subject
               </label>
+              <Field className="input" type="text" name="subject" />
               <ErrorMessage
                 className="errorMsg"
                 name="subject"
@@ -91,15 +91,15 @@ function ContactForm() {
               />
             </div>
             <div className="fieldset">
+              <label htmlFor="message" className="label">
+                Message
+              </label>
               <Field
                 className="input-textarea"
                 name="message"
                 component="textarea"
                 rows="3"
               />
-              <label htmlFor="message" className="label">
-                Message
-              </label>
               <ErrorMessage
                 className="errorMsg"
                 name="message"
