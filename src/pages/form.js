@@ -1,11 +1,11 @@
 import React from "react"
-import SEO from "../components/molecules/SEO"
+import Seo from "../components/molecules/Seo"
 import Container from "../components/atoms/Container"
 import ContactForm from "../components/organisms/ContactForm"
 
 const Form = () => (
   <>
-    <SEO title="Contact Form" />
+    <Seo title="Contact Form" />
     <Container>
       <ContactForm />
     </Container>

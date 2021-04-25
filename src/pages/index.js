@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/molecules/SEO"
+import Seo from "../components/molecules/Seo"
 import PostList from "../components/organisms/PostList"
 import Gallery from "../components/organisms/Gallery"
 import Container from "../components/atoms/Container"
@@ -19,7 +19,7 @@ const images = [
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Container>
       <h1>Home (We are using Gatsby V3)</h1>
       <h2>A gallery</h2>

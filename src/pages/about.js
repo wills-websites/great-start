@@ -1,10 +1,10 @@
 import React from "react"
-import SEO from "../components/molecules/SEO"
+import Seo from "../components/molecules/Seo"
 import Container from "../components/atoms/Container"
 
 const SecondPage = () => (
   <>
-    <SEO title="About" />
+    <Seo title="About" />
     <Container>
       <h1>About</h1>
       <h1>Heading 1</h1>

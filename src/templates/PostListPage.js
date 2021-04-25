@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import SEO from "../components/molecules/SEO"
+import Seo from "../components/molecules/Seo"
 import PostLink from "../components/molecules/PostLink"
 import Pagination from "../components/organisms/Pagination"
 import Container from "../components/atoms/Container"
@@ -23,7 +23,7 @@ class PostListPage extends Component {
   render() {
     return (
       <>
-        <SEO title="Posts" />
+        <Seo title="Posts" />
         <article>
           <Container>
             <h1>Posts</h1>

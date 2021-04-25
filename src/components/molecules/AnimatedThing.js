@@ -8,7 +8,7 @@ const Holder = styled.div`
   button {
     margin-bottom: 2rem;
   }
-`
+`;
 
 const BallHolder = styled.div`
   overflow: hidden;
