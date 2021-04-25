@@ -1,10 +1,14 @@
-import React from "react"
-import Seo from "../components/molecules/Seo"
-import PostList from "../components/organisms/PostList"
-import Gallery from "../components/organisms/Gallery"
-import Container from "../components/atoms/Container"
-import AnimatedThing from "../components/molecules/AnimatedThing"
-import GsapExample from "../components/organisms/GsapExample"
+import React from "react";
+import Seo from "../components/molecules/Seo";
+import PostList from "../components/organisms/PostList";
+import Gallery from "../components/organisms/Gallery";
+import Container from "../components/atoms/Container";
+import AnimatedThing from "../components/molecules/AnimatedThing";
+import GsapExample from "../components/organisms/GsapExample";
+import Cross from '../assets/svg/cross.inline.svg';
+import Hamburger from '../assets/svg/hamburger.inline.svg';
+import Arrow from '../assets/svg/arrow.inline.svg';
+import styled from "styled-components";
 
 const images = [
   "/images/uploads/tea-gardens-hotel.jpg",
@@ -15,22 +19,32 @@ const images = [
   "/images/uploads/fighterworld.jpg",
   "/images/uploads/entrance-pool.jpg",
   "/images/uploads/dinosaur.jpg",
-]
+];
+
+const Holder = styled.div`
+  svg {
+    width: 4rem;
+    height: auto;
+    margin-right: 2rem;
+  }
+`;
 
 const IndexPage = () => (
-  <>
-    <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
+  <Holder>
+    <Seo title="Home" keywords={[ `gatsby`, `application`, `react` ]}/>
     <Container>
       <h1>Home (We are using Gatsby V3)</h1>
       <h2>A gallery</h2>
-      <Gallery images={images} />
+      <Gallery images={images}/>
       <h2>An animation component example</h2>
-      <AnimatedThing />
-      <PostList />
+      <AnimatedThing/>
+      <PostList/>
       <h2>An animate on scroll example</h2>
-      <GsapExample />
+      <GsapExample/>
+      <h2>Some inline SVGs</h2>
+      <Cross/><Hamburger/><Arrow/>
     </Container>
-  </>
-)
+  </Holder>
+);
 
-export default IndexPage
+export default IndexPage;
