@@ -10,12 +10,11 @@ A starter template for Gatbsy web builds by Will McLean
 
 ## Start a site
 
-1. Download Zip of the repo and copy contents to your new site directory
+1. Create a private repo using this as a template when prompted in the willswebsites organisation
 1. Run `npm install` inside the project directory
 1. Update project title and description in readme, package.json and gatsby-config.js
 1. Run `git init` inside the project directory
 1. Create an 'Initial commit. Project setup'
-1. Create a private repo in in willmcl organisation
 1. Link Netlify site (under willmcl) to github repo for deployment
 1. Start deving with `gatsby develop`
 
