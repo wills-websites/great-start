@@ -128,6 +128,11 @@ const GlobalStyle = createGlobalStyle`
           border: 1px ${(props) => props.theme.colours.focus} solid;
       }
   }
+
+  ::placeholder {
+        color: ${props => props.theme.colours.black};
+        opacity: 0.6;
+  }
   
   .file-input,
   input[type="file"],
@@ -137,6 +142,105 @@ const GlobalStyle = createGlobalStyle`
   input[type="checkbox"],
   select {
       font-family:inherit;
+  }
+  
+  // Select
+
+  select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 2rem;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    color: ${props => props.theme.colours.black};
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .fieldset.select {
+    width: 100%;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    padding: 0;
+    margin: 0.5rem 0 !important;
+    ${props => props.theme.fluidType( 0 )};
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: transparent;
+    grid-template-areas: "select";
+    display: grid;
+    align-items: center;
+    &:after {
+      content: "";
+      width: 0.8rem;
+      height: 0.5rem;
+      background-color: ${props => props.theme.colours.black};
+      clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      justify-self: end;
+    }
+    select,
+    &:after {
+      grid-area: select;
+    }
+  }
+
+  /* Radio */
+  .fieldset.radio {
+    label {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      padding: 0.2rem 2rem;
+      margin-right: 1rem;
+      line-height: 1.6rem;
+      /* Hide the browser's default radio button */
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      /* Create a custom radio button */
+      .checkmark {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid ${props => props.theme.colours.black};
+        border-radius: 1rem;
+      }
+      .text {
+        position: relative;
+        z-index: 2;
+      }
+      /* On mouse-over, add a background color */
+      &:hover input ~ .checkmark {
+        background-color: ${props => props.theme.colours.focus};
+      }
+      /* When the radio button is checked, add a background */
+      input:checked ~ .checkmark {
+        background-color: ${props => props.theme.colours.black};
+      }
+      /* When the radio button is checked, add a background */
+      input:checked ~ .checkmark ~ .text {
+        color: ${props => props.theme.colours.white};
+      }
+    }
   }
   
   .button,
