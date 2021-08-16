@@ -11,6 +11,7 @@ const validationSchema = Yup.object().shape({
     .email("* Enter a Valid Email.")
     .required("* Email is Required."),
   subject: Yup.string(),
+  colour: Yup.string().required("* Colour is Required."),
   message: Yup.string().required("* Message is Required."),
 })
 
@@ -24,7 +25,7 @@ function ContactForm() {
   return (
     <>
       <Formik
-        initialValues={{ name: "", email: "", subject: "", message: "" }}
+        initialValues={{ name: "", email: "", colour: "", subject: "", message: "" }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           fetch("/", {
@@ -79,6 +80,17 @@ function ContactForm() {
                 component="small"
               />
             </div>
+
+            <label htmlFor="colour" className="label">Colour</label>
+            <div className="fieldset select">
+              <Field as="select" name="colour">
+                <option value="" disabled>Colour</option>
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+              </Field>
+              <ErrorMessage className="errorMsg" name="colour" component="small" />
+            </div>
+
             <div className="fieldset">
               <label htmlFor="subject" className="label">
                 Subject

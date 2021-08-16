@@ -97,6 +97,10 @@ const GlobalStyle = createGlobalStyle`
       line-height: 1.2;
       font-weight: normal;
   }
+
+  .fieldset {
+    margin: 0.5rem 0;
+  }
   
   .text-input,
   input[type="text"],
@@ -173,7 +177,7 @@ const GlobalStyle = createGlobalStyle`
     border-bottom: 1px solid;
     border-radius: 0;
     padding: 0;
-    margin: 0.5rem 0 !important;
+    margin: 0.5rem 0 1.5rem 0;
     ${props => props.theme.fluidType( 0 )};
     cursor: pointer;
     line-height: 1.1;
@@ -181,6 +185,7 @@ const GlobalStyle = createGlobalStyle`
     grid-template-areas: "select";
     display: grid;
     align-items: center;
+    max-width: 15rem;
     &:after {
       content: "";
       width: 0.8rem;
@@ -192,54 +197,6 @@ const GlobalStyle = createGlobalStyle`
     select,
     &:after {
       grid-area: select;
-    }
-  }
-
-  /* Radio */
-  .fieldset.radio {
-    label {
-      display: inline-block;
-      position: relative;
-      cursor: pointer;
-      user-select: none;
-      padding: 0.2rem 2rem;
-      margin-right: 1rem;
-      line-height: 1.6rem;
-      /* Hide the browser's default radio button */
-      input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-      }
-      /* Create a custom radio button */
-      .checkmark {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 1px solid ${props => props.theme.colours.black};
-        border-radius: 1rem;
-      }
-      .text {
-        position: relative;
-        z-index: 2;
-      }
-      /* On mouse-over, add a background color */
-      &:hover input ~ .checkmark {
-        background-color: ${props => props.theme.colours.focus};
-      }
-      /* When the radio button is checked, add a background */
-      input:checked ~ .checkmark {
-        background-color: ${props => props.theme.colours.black};
-      }
-      /* When the radio button is checked, add a background */
-      input:checked ~ .checkmark ~ .text {
-        color: ${props => props.theme.colours.white};
-      }
     }
   }
   
