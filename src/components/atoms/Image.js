@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import { StaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
+import {useStaticQuery, graphql} from "gatsby";
+import {GatsbyImage} from "gatsby-plugin-image";
+import PropTypes from 'prop-types';
 
-class Image extends Component {
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            allImageSharp {
+function Image({imgName}) {
+
+  const data = useStaticQuery(graphql`
+      query ImageQuery {
+        allImageSharp {
               nodes {
                 fluid {
                     originalName
@@ -20,24 +19,26 @@ class Image extends Component {
                     formats: [AUTO, WEBP]
                 )
               }
-            }
-          }
-        `}
-        render={data => {
-          const image = data.allImageSharp.nodes.find(
-            node => node.fluid.originalName === this.props.imgName.replace( /^.*[\\/]/, "" ),
-          );
-          if ( !image ) {
-            return null;
-          }
-          return <GatsbyImage
-            alt="gatsby"
-            layout="constrained"
-            image={image.gatsbyImageData}/>;
-        }}
-      />
-    );
+        }
+      }
+    `)
+
+  const image = data.allImageSharp.nodes.find(
+    node => node.fluid.originalName === imgName.replace(/^.*[\\/]/, ""),
+  );
+
+
+  if (!image) {
+    return null;
   }
+  return <GatsbyImage
+    alt="gatsby"
+    layout="constrained"
+    image={image.gatsbyImageData} />;
 }
+
+Image.propTypes = {
+  imgName: PropTypes.string.isRequired,
+};
 
 export default Image;

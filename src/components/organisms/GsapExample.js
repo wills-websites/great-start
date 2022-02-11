@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import ScrollTrigger from "gsap/ScrollTrigger"
 import _uniqueId from "lodash/uniqueId"
 import Image from "../atoms/Image"
 
