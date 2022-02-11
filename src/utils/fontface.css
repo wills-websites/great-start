@@ -1,0 +1,17 @@
+/*Comment out import statement in layouts/index.js to use custom font within global styles.*/
+
+/*@font-face {*/
+/*    font-family: "Universal Sans";*/
+/*    font-weight: normal;*/
+/*    src: url('../assets/fonts/UniversalSans-500.woff') format("woff"),*/
+/*    url('../assets/fonts/UniversalSans-500.ttf') format("ttf");*/
+/*    font-display: block;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Universal Sans";*/
+/*    font-weight: bold;*/
+/*    src: url('../assets/fonts/UniversalSans-680.woff') format("woff"),*/
+/*    url('../assets/fonts/UniversalSans-680.ttf') format("ttf");*/
+/*    font-display: block;*/
+/*}*/
