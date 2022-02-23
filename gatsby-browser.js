@@ -4,6 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+
+
+// If you remove the below links will automatically scroll to top on click. Very confusing.
+
+
 import smoothscroll from 'smoothscroll-polyfill';
 
 const transitionDelay = 500;

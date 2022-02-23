@@ -16,26 +16,18 @@ module.exports = {
     "gatsby-plugin-layout",
     `gatsby-plugin-sitemap`,
     {
-      resolve: "gatsby-plugin-svgr-svgo",
+      resolve: 'gatsby-plugin-svgr',
       options: {
-        inlineSvgOptions: [
-          {
-            test: /\.inline.svg$/,
-            svgoConfig: {
-              plugins: [
-                {
-                  removeViewBox: false,
-                  cleanupIDs: false,
-                  removeDimensions: true,
-                  removeOffCanvasPaths: true,
-                  collapseGroups: false,
-                  mergePaths: false,
-                  prefixIds: true,
-                },
-              ],
+        prettier: true,
+        svgo: true,
+        svgoConfig: {
+          plugins: [
+            {
+              name: 'prefixIds',
+              active: true,
             },
-          },
-        ],
+          ],
+        },
       },
     },
     {

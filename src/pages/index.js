@@ -5,9 +5,9 @@ import Gallery from "../components/organisms/Gallery";
 import Container from "../components/atoms/Container";
 import AnimatedThing from "../components/molecules/AnimatedThing";
 import GsapExample from "../components/organisms/GsapExample";
-import Cross from '../assets/svg/cross.inline.svg';
-import Hamburger from '../assets/svg/hamburger.inline.svg';
-import Arrow from '../assets/svg/arrow.inline.svg';
+import { ReactComponent as Cross } from '../assets/svg/cross.inline.svg';
+import { ReactComponent as Hamburger } from '../assets/svg/hamburger.inline.svg';
+import { ReactComponent as Arrow } from '../assets/svg/arrow.inline.svg';
 import styled from "styled-components";
 
 const images = [
