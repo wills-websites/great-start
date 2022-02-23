@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-size: ${(props) => props.theme.fluidType(0)};
+      ${(props) => props.theme.fluidType(0)};
       * { box-sizing: border-box; }
   }
 
