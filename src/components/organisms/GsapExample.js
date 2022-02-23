@@ -1,17 +1,11 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
-import { gsap } from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
-import _uniqueId from "lodash/uniqueId"
 import Image from "../atoms/Image"
-
-gsap.registerPlugin(ScrollTrigger)
+import useScrollTrigger from "../../hooks/useScrollTrigger";
 
 const Holder = styled.div``
 
-const Inner = styled.div.attrs((props) => ({
-  id: props.uniqueId || "",
-}))`
+const Inner = styled.div`
   display: grid;
   align-items: start;
   grid-template-columns: 1fr;
@@ -22,57 +16,46 @@ const Inner = styled.div.attrs((props) => ({
 `
 
 function GsapExample() {
-  const [id, setId] = useState(null)
-  const holder = useRef(null)
-  const tl = useRef(null)
+  const {tl, holderRef, gsap, st, q} = useScrollTrigger();
 
   useEffect(() => {
-    setId(_uniqueId("gsap-example-"))
-  }, [])
-
-  useEffect(() => {
-    if (!tl.current && id) {
-      tl.current = ScrollTrigger.matchMedia({
+    if (!tl.current) {
+      tl.current = st.matchMedia({
         // desktop
         "(min-width: 576px)": function () {
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: holder.current,
-                start: "top 75%",
-                end: "top 25%",
-                scrub: true,
-              },
-            })
-            .from(`#${id} .column:first-child`, {
-              x: -100,
-              y: 50,
-              autoAlpha: 0,
-              duration: 1,
-            })
-            .from(
-              `#${id} .column:last-child`,
-              {
-                x: 100,
-                y: 50,
-                autoAlpha: 0,
-                duration: 1,
-              },
-              0
-            )
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: holderRef.current,
+              start: "top 75%",
+              end: "top 25%",
+              scrub: 0.25,
+            },
+          }).from(q(`.column-one`), {
+            x: -100,
+            y: 50,
+            autoAlpha: 0,
+            duration: 1,
+          }).from(q(`.column-two`), {
+            x: 100,
+            y: 50,
+            autoAlpha: 0,
+            duration: 1,
+          }, 0)
         },
+        // Add more breakpoints if needed.
+        // See https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.matchMedia()
       })
     }
-  }, [id])
+  })
 
   return (
-    <Holder ref={holder}>
-      <Inner uniqueId={id}>
-        <div className="column">
+    <Holder ref={holderRef}>
+      <Inner>
+        <div className="column-one">
           <Image imgName="dinosaur.jpg" />
           <p>Column 1 content</p>
         </div>
-        <div className="column">
+        <div className="column-two">
           <Image imgName="redfern.jpg" />
           <p>Column 2 content</p>
         </div>
