@@ -9,6 +9,8 @@ import { ReactComponent as Cross } from '../assets/svg/cross.inline.svg';
 import { ReactComponent as Hamburger } from '../assets/svg/hamburger.inline.svg';
 import { ReactComponent as Arrow } from '../assets/svg/arrow.inline.svg';
 import styled from "styled-components";
+import AccordionGroup from "../components/atoms/AccordionGroup";
+import Accordion from "../components/atoms/Accordion";
 
 const images = [
   "/images/uploads/tea-gardens-hotel.jpg",
@@ -39,6 +41,18 @@ const IndexPage = () => (
       <h2>An animation component example</h2>
       <AnimatedThing/>
       <PostList/>
+      <h2>An accordion example</h2>
+      <AccordionGroup>
+        <Accordion
+          title={<p>Q: Will this accordion work?</p>}>
+          <p>Who knows!?</p>
+        </Accordion>
+        <Accordion
+          scrollTo={false}
+          title={<p>Q: Will this one work as well?</p>}>
+          <p>Absolutely no idea.</p>
+        </Accordion>
+      </AccordionGroup>
       <h2>An animate on scroll example</h2>
       <GsapExample/>
       <h2>Some inline SVGs</h2>
