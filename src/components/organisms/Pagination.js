@@ -1,38 +1,25 @@
-import React, { Component } from "react"
+import React, {Component} from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import {Link} from "gatsby"
+import PropTypes from "prop-types";
+import Container from "../atoms/Container";
 
 const Holder = styled.div`
   display: flex;
-  justify-content: center;
-  ul {
-    list-style: none;
-    padding-left: 0;
-    li {
-      display: inline-block;
-      margin: 0 1rem;
-      a {
-        text-decoration: none;
-        &[aria-current="page"] {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
+  justify-content: space-between;
 `
 
-class Pagination extends Component {
-  render() {
-    const { currentPage, numPages } = this.props.pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage =
-      currentPage - 1 === 1
-        ? "/posts/"
-        : `/posts/${(currentPage - 1).toString()}`
-    const nextPage = `/posts/${(currentPage + 1).toString()}`
+function Pagination({currentPage, totalPages, baseSlug}) {
+  const isFirst = currentPage === 1
+  const isLast = currentPage === totalPages
+  const prevPage =
+    currentPage - 1 === 1
+      ? `/${baseSlug}`
+      : `/${baseSlug}${(currentPage - 1).toString()}`
+  const nextPage = `/${baseSlug}${(currentPage + 1).toString()}`
 
-    return (
+  return (
+    <Container>
       <Holder>
         <p>
           {!isFirst && (
@@ -41,23 +28,26 @@ class Pagination extends Component {
             </Link>
           )}
         </p>
-        <ul>
-          {Array.from({ length: numPages }, (_, i) => (
-            <li key={`pagination-number${i + 1}`}>
-              <Link to={`/posts/${i === 0 ? "" : i + 1}`}>{i + 1}</Link>
-            </li>
-          ))}
-        </ul>
         <p>
-          {!isLast && (
+          {!isLast && totalPages > 1 && (
             <Link to={nextPage} rel="next">
               Older
             </Link>
           )}
         </p>
       </Holder>
-    )
-  }
+    </Container>
+  )
 }
 
-export default Pagination
+Pagination.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPages: PropTypes.number.isRequired,
+  baseSlug: PropTypes.string,
+};
+
+Pagination.defaultProps = {
+  baseSlug: '',
+};
+
+export default Pagination;

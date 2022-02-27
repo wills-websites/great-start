@@ -32,8 +32,11 @@ class PostListPage extends Component {
                 <PostLink key={edge.node.id} post={edge.node} />
               ))}
             </Holder>
-            <Pagination pageContext={this.props.pageContext} />
           </Container>
+          <Pagination
+            baseSlug="posts/"
+            currentPage={this.props.pageContext.currentPage}
+            totalPages={this.props.pageContext.numPages} />
         </article>
       </>
     )
