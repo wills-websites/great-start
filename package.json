@@ -31,7 +31,7 @@
     "gatsby-transformer-sharp": "^4.8.0",
     "gsap": "^3.9.1",
     "lodash.uniqueid": "^4.0.1",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "prismic-reactjs": "^1.3.4",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
