@@ -15,9 +15,6 @@ class Navigation extends Component {
               <Link to="/about/">About</Link>
             </li>
             <li>
-              <Link to="/posts/">Posts</Link>
-            </li>
-            <li>
               <Link to="/form/">Contact Form</Link>
             </li>
           </ul>

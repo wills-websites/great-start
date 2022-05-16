@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { ReactComponent as Arrow } from '../../assets/svg/arrow.inline.svg';
+import Arrow from '../../assets/svg/arrow.inline.svg';
 import { animateScroll as scroll } from 'react-scroll/modules';
 
 const Holder = styled.div`

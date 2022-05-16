@@ -16,26 +16,12 @@ module.exports = {
     "gatsby-plugin-layout",
     `gatsby-plugin-sitemap`,
     {
-      resolve: 'gatsby-plugin-svgr',
+      resolve: 'gatsby-plugin-react-svg',
       options: {
-        prettier: true,
-        svgo: true,
-        svgoConfig: {
-          plugins: [
-            {
-              name: 'prefixIds',
-              active: true,
-            },
-          ],
-        },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/_posts/`,
-      },
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,

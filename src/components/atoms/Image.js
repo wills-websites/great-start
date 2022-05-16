@@ -7,30 +7,30 @@ function Image({imgName}) {
 
   const data = useStaticQuery(graphql`
       query ImageQuery {
-        allImageSharp {
+          allImageSharp {
               nodes {
-                fluid {
-                    originalName
-                    originalImg
-                }
-                gatsbyImageData(
-                    width: 1200
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP]
-                )
+                  resize {
+                      originalName
+                  }
+                  gatsbyImageData(
+                      width: 1200
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP]
+                  )
               }
-        }
+          }
       }
-    `)
+  `)
 
   const image = data.allImageSharp.nodes.find(
-    node => node.fluid.originalName === imgName.replace(/^.*[\\/]/, ""),
+    node => node.resize.originalName === imgName.replace(/^.*[\\/]/, ""),
   );
 
 
   if (!image) {
     return null;
   }
+
   return <GatsbyImage
     alt="gatsby"
     layout="constrained"
