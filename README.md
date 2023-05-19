@@ -34,4 +34,15 @@ To get prismic working with this template:
 5. Uncomment the prismic previews setup in the gatsby-ssr.js and gatsby-browser.js files
 6. Uncomment the prismic queries and other related bits in the templates/ProjectListPage.js file
 7. Rename the example projects/ExamplePrismicContentTypeFile.js file to match your content type (eg. {PrismicProject.uid}.js)
-8. Check your link providers, queries and templates are all updated with relevant info to you prismic repo content types.
+8. Check your linkResolver, queries and templates are all updated with relevant info to you prismic repo content types.
+
+## Removing Prismic
+
+If you aren't going to use Prismic then you can remove the following:
+
+1. Remove the prismic plugins from gatsby-config.js
+2. Remove the prismic previews setup in the gatsby-ssr.js and gatsby-browser.js files
+3. Remove the templates/ProjectListPage.js file
+4. Remove the example projects/ExamplePrismicContentTypeFile.js file
+5. Remove the linkResolver.js file
+6. Uninstall the prismic dependencies `npm uninstall gatsby-source-prismic prismic-reactjs gatsby-plugin-prismic-previews`
