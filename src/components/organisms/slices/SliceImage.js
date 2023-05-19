@@ -14,7 +14,7 @@ const SliceImage = ({slice}) => {
   return (
     <Holder>
       <Container>
-        <GatsbyImage alt={alt} image={image} />
+        <GatsbyImage alt={alt || ''} image={image} />
       </Container>
     </Holder>
   );

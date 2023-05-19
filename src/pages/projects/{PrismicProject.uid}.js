@@ -4,11 +4,12 @@ import {graphql} from "gatsby"
 import Container from "../../components/atoms/Container";
 import {PrismicRichText, SliceZone} from "@prismicio/react"
 import SliceImage from "../../components/organisms/slices/SliceImage";
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 const Holder = styled.div`
 `;
 
-export default function ProjectPage(props) {
+const ProjectPage = (props) => {
   const {title, text, body} = props.data.prismicProject.data;
   return (
     <Container>
@@ -29,6 +30,7 @@ export default function ProjectPage(props) {
 export const query = graphql`
     query($id: String) {
         prismicProject(id: { eq: $id }) {
+            _previewable
             data {
                 title {
                     text
@@ -43,3 +45,5 @@ export const query = graphql`
         }
     }
 `
+
+export default withPrismicPreview(ProjectPage)

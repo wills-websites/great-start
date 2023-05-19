@@ -17,6 +17,9 @@ class Navigation extends Component {
             <li>
               <Link to="/form/">Contact Form</Link>
             </li>
+            <li>
+              <Link to="/projects/albion-park-rail-bypass/">Dummy project</Link>
+            </li>
           </ul>
         </nav>
       </Container>

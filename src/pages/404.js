@@ -1,15 +1,17 @@
-import React from "react"
-import Seo from "../components/molecules/Seo"
-import Container from "../components/atoms/Container"
+import * as React from 'react'
+import {withPrismicUnpublishedPreview} from 'gatsby-plugin-prismic-previews'
+import Container from "../components/atoms/Container";
+import Seo from "../components/molecules/Seo";
 
-const NotFoundPage = () => (
-  <>
-    <Seo title="404: Not found" />
-    <Container>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Container>
-  </>
-)
+const NotFoundPage = () => {
+  return (
+    <>
+      <Seo title="404: Not found" />
+      <Container>
+        <h1>Not found</h1>
+      </Container>
+    </>
+  )
+}
 
-export default NotFoundPage
+export default withPrismicUnpublishedPreview(NotFoundPage)
