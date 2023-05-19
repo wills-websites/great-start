@@ -36,6 +36,7 @@
     "react-is": "^18.1.0",
     "react-scroll": "^1.8.7",
     "react-transition-group": "^4.4.2",
+    "react-use": "^17.4.0",
     "showdown": "^2.1.0",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.3.5",
