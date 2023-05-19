@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+
+  :root {
+    --windowHeight: 100vh;
+  }
+  
   html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
