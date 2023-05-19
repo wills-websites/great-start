@@ -1,8 +1,13 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+const linkResolver = require('./src/utils/linkResolver');
+
 module.exports = {
   siteMetadata: {
     title: `Great Start`,
-    description: `Will's great start for Gatsby builds`,
-    author: `Will McLean`,
+    description: `Supermarket and Public starter for Gatsby builds`,
+    author: `Supermarket`,
     siteUrl: `https://www.example.com`,
   },
   flags: {
@@ -15,6 +20,22 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-layout",
     `gatsby-plugin-sitemap`,
+    // {
+    //   resolve: "gatsby-source-prismic",
+    //   options: {
+    //     repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+    //     accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+    //     customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+    //     linkResolver: () => (doc) => linkResolver(doc),
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-plugin-prismic-previews',
+    //   options: {
+    //     repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+    //     accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

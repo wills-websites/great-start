@@ -1,6 +1,6 @@
 # Great Start
 
-A starter template for Gatbsy web builds by Will McLean
+A starter template for Gatbsy and Prismic builds for Public Websites and Supermarket.
 
 ## Start a site
 
@@ -10,7 +10,7 @@ A starter template for Gatbsy web builds by Will McLean
 4. Update project title and description in readme, package.json and gatsby-config.js
 5. Add an initial commit and push to github
 7. Start deving with `gatsby develop`
-6. Link Netlify site to github repo for deployment (or get Will to)
+6. Link Netlify site to github repo for deployment
 
 ## Join the site
 
@@ -22,3 +22,27 @@ A starter template for Gatbsy web builds by Will McLean
 ## Deployment
 
 Master branch set to auto deploy to <insert url here>
+
+## Prismic
+
+To get prismic working with this template:
+
+1. Create a new prismic repo and set up a content type (eg. Projects)
+2. Set up previews in your prismic repo settings (https://prismic.io/docs/previews-gatsby)
+3. Add your repo name, api key and content type access token to a .env.development file
+4. Uncomment the prismic plugins in gatsby-config.js
+5. Uncomment the prismic previews setup in the gatsby-ssr.js and gatsby-browser.js files
+6. Uncomment the prismic queries and other related bits in the templates/ProjectListPage.js file
+7. Rename the example projects/ExamplePrismicContentTypeFile.js file to match your content type (eg. {PrismicProject.uid}.js)
+8. Check your linkResolver, queries and templates are all updated with relevant info to you prismic repo content types.
+
+## Removing Prismic
+
+If you aren't going to use Prismic then you can remove the following:
+
+1. Remove the prismic plugins from gatsby-config.js
+2. Remove the prismic previews setup in the gatsby-ssr.js and gatsby-browser.js files
+3. Remove the templates/ProjectListPage.js file
+4. Remove the example projects/ExamplePrismicContentTypeFile.js file
+5. Remove the linkResolver.js file
+6. Uninstall the prismic dependencies `npm uninstall gatsby-source-prismic prismic-reactjs gatsby-plugin-prismic-previews`
